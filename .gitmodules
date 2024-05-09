@@ -10,3 +10,6 @@
 [submodule "plugins/artisan"]
 	path = plugins/artisan
 	url = https://github.com/jessarcher/zsh-artisan
+[submodule "plugins/zsh-nvm"]
+	path = plugins/zsh-nvm
+	url = https://github.com/lukechilds/zsh-nvm
