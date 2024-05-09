@@ -9,16 +9,17 @@ startup_animation_stop() {
         unset STARTUP_ANIMATION_CONSOLE_CLEAR
         return
     fi
-    
+
     if [[ $STARTUP_ANIMATION_PID && $STARTUP_ANIMATION_PID != "" ]]; then
         kill -9 "$STARTUP_ANIMATION_PID" &>/dev/null
         unset STARTUP_ANIMATION_PID
     fi 
-    
-    tput cnorm
-    printf "\n"
 
     [[ $STARTUP_ANIMATION_CONSOLE_CLEAR == "yes" ]] && clear
+
+    tput cnorm
+    [[ $STARTUP_ANIMATION_CONSOLE_CLEAR != "yes" ]] && printf "\n"
+    
     [[ $STARTUP_ANIMATION_CLEAR ]] && unset STARTUP_ANIMATION_CLEAR
     [[ $STARTUP_ANIMATION_CONSOLE_CLEAR ]] && unset STARTUP_ANIMATION_CONSOLE_CLEAR
 }
