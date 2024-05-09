@@ -3,6 +3,7 @@
 # Initializer                                                        #
 #--------------------------------------------------------------------#
 
+# First Init Customization & Write Config
 first_init() {
     printf "\n%s\n" "First Init Custom Config"
     if [ ! -d "$ZSH_CACHE" ]; then
@@ -20,27 +21,21 @@ first_init() {
 
 # Cleanup
 cleanup_init() {
-    unset TOAST_MODULE
-    unset TOAST_MODULE_EXIST
-    unset STARTUP_ANIMATION_CLEAR
-    unset STARTUP_ANIMATION_CONSOLE_CLEAR
-    unset NOTIFY_LOGO
-    unset NOTIFY_SOUND
-    unset NOTIFY_AT_STARTUP
+    local localvars=(TOAST_MODULE TOAST_MODULE_EXIST STARTUP_ANIMATION_CLEAR STARTUP_ANIMATION_CONSOLE_CLEAR NOTIFY_LOGO NOTIFY_SOUND NOTIFY_AT_STARTUP)
+    local localfuncs=(init first_init cleanup_init load_config save_config init_config validate_os validate_notification_module startup_animation_start startup_animation_stop)
 
-    unset -f init
-    unset -f first_init
-    unset -f cleanup_init
-    unset -f load_config
-    unset -f save_config
-    unset -f init_config
-    unset -f validate_os
-    unset -f validate_notification_module
-    unset -f startup_animation_stop
+    # cleanup vars
+    for localvar in "${localvars[@]}"; do
+        unset $localvar 2> /dev/null
+    done
 
-    type startup_animation_start &> /dev/null && unset -f startup_animation_start
+    # cleanup functions
+    for func in "${localfuncs[@]}"; do
+        unset -f $func 2> /dev/null
+    done
 }
 
+# Init Customization
 init() {
     # Init config
     init_config
@@ -67,6 +62,9 @@ init() {
         first_init
         load_config
     fi
+
+    # Cleanup
+    cleanup_init
 }
 
 autoload -Uz cleanup_init
