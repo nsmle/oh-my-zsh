@@ -8,12 +8,12 @@
 HOMEUSER="${HOMEUSER:-"$HOME"}"
 ZSH_CUSTOM="${ZSH_CUSTOM:-"$(dirname "$0")"}"
 
-. $ZSH_CUSTOM/src/config.zsh
-. $ZSH_CUSTOM/src/os.zsh
-. $ZSH_CUSTOM/src/init.zsh
-. $ZSH_CUSTOM/src/notify.zsh
-. $ZSH_CUSTOM/src/alias.zsh
-. $ZSH_CUSTOM/src/animation/startup-animation-stop.zsh
+. $ZSH_CUSTOM/lib/config.zsh
+. $ZSH_CUSTOM/lib/os.zsh
+. $ZSH_CUSTOM/lib/init.zsh
+. $ZSH_CUSTOM/lib/notify.zsh
+. $ZSH_CUSTOM/lib/alias.zsh
+. $ZSH_CUSTOM/lib/animation/startup-animation-stop.zsh
 
 # Initializing
 init

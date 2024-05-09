@@ -6,7 +6,7 @@
 startup_animation_start() {
     ZSH=${ZSH:-"/c/Users/${USERNAME}/.oh-my-zsh"}
     ZSH_CUSTOM=${ZSH_CUSTOM:-"$ZSH/custom"}
-    STARTUP_ANIMATION_DIR_PATH=${STARTUP_ANIMATION_DIR_PATH:-"$ZSH_CUSTOM/src/animation/frames"}
+    STARTUP_ANIMATION_DIR_PATH=${STARTUP_ANIMATION_DIR_PATH:-"$ZSH_CUSTOM/lib/animation/frames"}
 
     local frame_style=${STARTUP_ANIMATION_STYLE:-default}
     local frame_interval=0.06

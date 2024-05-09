@@ -27,7 +27,7 @@ init_config() {
     STARTUP_ANIMATION_STYLE="${STARTUP_ANIMATION_STYLE:-default}"
     # Notification
     NOTIFY_SOUND="${NOTIFY_SOUND:-Reminder}"
-    NOTIFY_LOGO="${NOTIFY_LOGO:-$ZSH_CUSTOM/src/asset/nsmle.png}"
+    NOTIFY_LOGO="${NOTIFY_LOGO:-$ZSH_CUSTOM/lib/asset/nsmle.png}"
     NOTIFY_AT_STARTUP="${NOTIFY_AT_STARTUP:-no}"
 }
 

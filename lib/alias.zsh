@@ -4,7 +4,7 @@
 #--------------------------------------------------------------------#
 
 # Importing Utilities
-. "$ZSH_CUSTOM/src/utilities/cat-copy.zsh"
+. "$ZSH_CUSTOM/lib/utilities/cat-copy.zsh"
 
 # Aliases
 alias sizeofdir="du -h --max-depth=1 | sort -hr"
